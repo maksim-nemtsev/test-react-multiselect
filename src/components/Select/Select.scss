@@ -31,7 +31,7 @@ $body: #081f2c;
 
 .selection {
   position: relative;
-  height: 41px;
+  min-height: 41px;
   padding: 5px 25px 5px 5px;
   border: 1px solid $grey-border;
   border-radius: 3px;
