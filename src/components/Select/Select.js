@@ -141,10 +141,10 @@ export class Select extends Component {
 
     return (
       <div className="select" tabIndex="0">
-        <label className="label">Label {label}</label>
+        <label className="label">{label}</label>
         {/* the main onClick function */}
         <div className="selection" onClick={this.onClick}>
-          Render values {this.renderValues()}
+          {this.renderValues()}
           <span className="arrow">
             {isOpen ? (
               <span>
@@ -157,7 +157,7 @@ export class Select extends Component {
             )}
           </span>
         </div>
-        render options {this.renderOptions()}
+{this.renderOptions()}
       </div>
     );
   }

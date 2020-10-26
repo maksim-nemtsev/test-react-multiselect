@@ -5,8 +5,7 @@ $grey-dark: #444;
 $main-light: #d9f2fb;
 $main: #00a9e0;
 $main-dark: #007da6;
-$success: #7fd81e;
-$error: #ff5100;
+$delete: #ff5100;
 $warning: #f6c223;
 $body: #081f2c;
 
@@ -32,6 +31,7 @@ $body: #081f2c;
 
 .selection {
   position: relative;
+  height: 41px;
   padding: 5px 25px 5px 5px;
   border: 1px solid $grey-border;
   border-radius: 3px;
@@ -46,7 +46,7 @@ $body: #081f2c;
 
 .multiple {
   padding-right: 25px;
-  margin: 3px;
+  margin-right: 3px;
   background-color: $main-light;
   color: $grey-text;
 }
@@ -70,9 +70,13 @@ svg {
   padding: 10px;
 }
 
+.delete:hover {
+  color: $delete;
+}
+
 .arrow {
   position: absolute;
-  top: 10px;
+  top: 3px;
   right: 5px;
   display: block;
   padding: 10px;
