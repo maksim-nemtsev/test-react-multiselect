@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from '../Select';
-import './App.css';
+import './App.scss';
 
 const App = () => {
   const options = [
