@@ -15,17 +15,10 @@ export class Select extends Component {
       // для открытия дропдаун меню
       isOpen: false,
     };
-
-    this.renderOptions = this.renderOptions.bind(this);
-    this.renderOption = this.renderOption.bind(this);
-    this.renderValues = this.renderValues.bind(this);
-    this.onClickOption = this.onClickOption.bind(this);
-    this.onClick = this.onClick.bind(this);
-    this.onDeleteOption = this.onDeleteOption.bind(this);
   }
 
   //clicked the option
-  onClickOption(e) {
+  onClickOption = (e) => {
     const { multiple } = this.props;
 
     const { value } = e.currentTarget.dataset;
@@ -49,20 +42,20 @@ export class Select extends Component {
 
       return { values };
     });
-  }
+  };
 
   stopPropagation(e) {
     e.stopPropagation();
   }
 
   // the main onClick function
-  onClick() {
+  onClick = () => {
     this.setState((prevState) => ({
       isOpen: !prevState.isOpen,
     }));
-  }
+  };
 
-  onDeleteOption(e) {
+  onDeleteOption = (e) => {
     const { value } = e.currentTarget.dataset;
 
     this.setState((prevState) => {
@@ -73,9 +66,9 @@ export class Select extends Component {
 
       return { values };
     });
-  }
+  };
 
-  renderValues() {
+  renderValues = () => {
     const { placeholder, multiple } = this.props;
     const { values } = this.state;
 
@@ -97,9 +90,9 @@ export class Select extends Component {
     }
 
     return <div className="value">{values[0]}</div>;
-  }
+  };
 
-  renderOptions() {
+  renderOptions = () => {
     const { options } = this.props;
     const { isOpen } = this.state;
 
@@ -108,9 +101,9 @@ export class Select extends Component {
     }
 
     return <div className="options">{options.map(this.renderOption)}</div>;
-  }
+  };
 
-  renderOption(option, index) {
+  renderOption = (option, index) => {
     const { multiple } = this.props;
     const { values, focusedValue } = this.state;
 
@@ -133,7 +126,7 @@ export class Select extends Component {
         {value}
       </div>
     );
-  }
+  };
 
   render() {
     const { isOpen } = this.state;
@@ -157,7 +150,7 @@ export class Select extends Component {
             )}
           </span>
         </div>
-{this.renderOptions()}
+        {this.renderOptions()}
       </div>
     );
   }
